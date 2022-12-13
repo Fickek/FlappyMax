@@ -32,9 +32,11 @@ public class MenuManager : MonoBehaviour
         PlayerPrefs.SetInt("spriteVersion", spriteVersion);
 
 
-        highScoreNum = PlayerPrefs.GetInt("score");
-
+        highScoreNum = PlayerPrefs.GetInt("highscore");
         highScoreText.text += highScoreNum.ToString();
+
+        Debug.Log("High Score: " + highScoreNum);
+
 
     }
 
