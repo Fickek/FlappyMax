@@ -65,6 +65,7 @@ public class GameplayManager : MonoBehaviour
     {
         score++;
         scoreText.text = score.ToString();
+        PlayerPrefs.SetInt("score", score);
     }
 
     public void GameOver()
@@ -74,7 +75,6 @@ public class GameplayManager : MonoBehaviour
         playButton.SetActive(true); 
         backToMenuBtn.SetActive(true);
         Pause();
-
     }
 
     public void BackToMenu()

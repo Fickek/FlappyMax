@@ -11,8 +11,11 @@ public class MenuManager : MonoBehaviour
     public GameObject textLogo;
     public GameObject playButton;
     public GameObject player;
+    public Text highScoreText;
+    private int highScoreNum = 0;
     public Sprite[] newCharacter;
     private int spriteVersion;
+   
 
     //public GameObject newPlayer;
     //public GameObject[] prefabs;
@@ -27,6 +30,12 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = 1f;
         spriteRenderer.sprite = newCharacter[0];
         PlayerPrefs.SetInt("spriteVersion", spriteVersion);
+
+
+        highScoreNum = PlayerPrefs.GetInt("score");
+
+        highScoreText.text += highScoreNum.ToString();
+
     }
 
     // Запускает сцену с игрой
