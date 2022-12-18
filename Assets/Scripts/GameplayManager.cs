@@ -13,7 +13,7 @@ public class GameplayManager : MonoBehaviour
     public GameObject playButton;
     public GameObject backToMenuBtn;
     public GameObject gameOver;
-    private int score = 0;
+    private int _score = 0;
     //public Rigidbody2D playerRb;
     public SpriteRenderer playerCharacterSprite;
     public Sprite[] newCharacter;
@@ -39,8 +39,8 @@ public class GameplayManager : MonoBehaviour
     public void Play()
     {
 
-        score = 0;
-        scoreText.text = score.ToString();
+        _score = 0;
+        scoreText.text = _score.ToString();
         gameOver.SetActive(false);
         playButton.SetActive(false);
         backToMenuBtn.SetActive(false);
@@ -63,9 +63,9 @@ public class GameplayManager : MonoBehaviour
 
     public void IncreaseScore()
     {
-        score++;
-        scoreText.text = score.ToString();
-        PlayerPrefs.SetInt("score", score);
+        _score++;
+        scoreText.text = _score.ToString();
+        PlayerPrefs.SetInt("score", _score);
     }
 
     public void GameOver()

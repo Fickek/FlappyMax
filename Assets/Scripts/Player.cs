@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     //private SpriteRenderer spriteRenderer;
     public Sprite[] sprites;
     private int spriteIndex;
-    private Vector3 direction;
+    private Vector3 _direction;
     public float gravity = -9.8f;
     public float strength = 5f;
 
@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonUp(0))
         {
             //Debug.Log("Pressed");
-            direction = Vector3.up * strength;
+            _direction = Vector3.up * strength;
         }
         if(Input.touchCount > 0)
         {
@@ -38,12 +38,12 @@ public class Player : MonoBehaviour
 
             if(touch.phase == TouchPhase.Began)
             {
-                direction = Vector3.up * strength;
+                _direction = Vector3.up * strength;
             }
         }
 
-        direction.y += gravity * Time.deltaTime;
-        transform.position += direction * Time.deltaTime;
+        _direction.y += gravity * Time.deltaTime;
+        transform.position += _direction * Time.deltaTime;
         
     }
 
@@ -77,7 +77,7 @@ public class Player : MonoBehaviour
         Vector3 position = transform.position;
         position.y = 0;
         transform.position = position;
-        direction = Vector3.zero;
+        _direction = Vector3.zero;
     }
 
 

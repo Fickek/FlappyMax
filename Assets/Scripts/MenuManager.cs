@@ -12,9 +12,9 @@ public class MenuManager : MonoBehaviour
     public GameObject playButton;
     public GameObject player;
     public Text highScoreText;
-    private int highScoreNum = 0;
+    private int _highScoreNum = 0;
     public Sprite[] newCharacter;
-    private int spriteVersion;
+    private int _spriteVersion;
    
 
     //public GameObject newPlayer;
@@ -29,13 +29,13 @@ public class MenuManager : MonoBehaviour
         Application.targetFrameRate = 60;
         Time.timeScale = 1f;
         spriteRenderer.sprite = newCharacter[0];
-        PlayerPrefs.SetInt("spriteVersion", spriteVersion);
+        PlayerPrefs.SetInt("spriteVersion", _spriteVersion);
 
 
-        highScoreNum = PlayerPrefs.GetInt("highscore");
-        highScoreText.text += highScoreNum.ToString();
+        _highScoreNum = PlayerPrefs.GetInt("highscore");
+        highScoreText.text += _highScoreNum.ToString();
 
-        Debug.Log("High Score: " + highScoreNum);
+        Debug.Log("High Score: " + _highScoreNum);
 
 
     }
@@ -48,36 +48,36 @@ public class MenuManager : MonoBehaviour
 
     public void leftChange()
     {
-        if (spriteVersion == 0)
+        if (_spriteVersion == 0)
         {
-            spriteVersion = newCharacter.Length - 1;
+            _spriteVersion = newCharacter.Length - 1;
         }
         else
         {
-            spriteVersion--;
+            _spriteVersion--;
         }
 
-        spriteRenderer.sprite = newCharacter[spriteVersion];
+        spriteRenderer.sprite = newCharacter[_spriteVersion];
         // Передаёт интовое число для переключения скина на другой сцене
-        PlayerPrefs.SetInt("spriteVersion", spriteVersion);
+        PlayerPrefs.SetInt("spriteVersion", _spriteVersion);
 
 
     }
 
     public void rightChange()
     {
-        if (spriteVersion == newCharacter.Length - 1)
+        if (_spriteVersion == newCharacter.Length - 1)
         {
-            spriteVersion = 0;
+            _spriteVersion = 0;
         }
         else
         {
-            spriteVersion++;
+            _spriteVersion++;
         }
 
-        spriteRenderer.sprite = newCharacter[spriteVersion];
+        spriteRenderer.sprite = newCharacter[_spriteVersion];
 
-        PlayerPrefs.SetInt("spriteVersion", spriteVersion);
+        PlayerPrefs.SetInt("spriteVersion", _spriteVersion);
 
     }
 
