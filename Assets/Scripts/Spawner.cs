@@ -1,30 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject prefab;
-    public float spawnRate = 1f;
-    public float minHeight = -1f;
-    public float maxHeight = 1f;
+    [SerializeField] private GameObject _prefab;
+    [SerializeField] private float _spawnRate = 5f;
+    [SerializeField] private float _minHeight = -1f;
+    [SerializeField] private float _maxHeight = 1f;
 
     private void Start()
     {
-        //Debug.Log("onEnable");
-        InvokeRepeating(nameof(spawnPipes), 0.5f, spawnRate);
+        StartCoroutine(SpawnTank());
     }
 
-    /*private void OnDisable()
+    IEnumerator SpawnTank()
     {
-        CancelInvoke(nameof(spawnPipes));
-    }*/
-
-
-    void spawnPipes()
-    {
-        GameObject pipes = Instantiate(prefab, transform.position, Quaternion.identity);
-        pipes.transform.position += Vector3.up * Random.Range(minHeight, maxHeight);     
+        while (true)
+        {
+            Vector3 spawn = transform.position + Vector3.up * Random.Range(_minHeight, _maxHeight);
+            Instantiate(_prefab, spawn, Quaternion.identity);
+            Debug.Log("5sec");
+            yield return new WaitForSeconds(_spawnRate);
+        }        
     }
 
 }

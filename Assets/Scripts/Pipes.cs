@@ -5,12 +5,12 @@ using UnityEngine;
 public class Pipes : MonoBehaviour
 {
     
-    public float speed = 1.0f;
+    [SerializeField] private float _speed = 1.0f;
     private float _leftEdge = -12f;
 
     void Update()
     {
-        transform.position += Vector3.left * speed * Time.deltaTime;
+        transform.position += Vector3.left * _speed * Time.deltaTime;
 
         if (transform.position.x < _leftEdge)
         {

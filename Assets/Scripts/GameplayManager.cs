@@ -8,18 +8,17 @@ using UnityEngine.TextCore.Text;
 public class GameplayManager : MonoBehaviour
 {
     //private SpriteRenderer sprite;
-    public Player player;
-    public Text scoreText;
-    public GameObject playButton;
-    public GameObject backToMenuBtn;
-    public GameObject gameOver;
-    private int _score = 0;
+    [SerializeField] private Player _player;
+    [SerializeField] private Text _scoreText;
+    [SerializeField] private GameObject _playButton;
+    [SerializeField] private GameObject _backToMenuBtn;
+    [SerializeField] private GameObject _gameOver;
+
     //public Rigidbody2D playerRb;
-    public SpriteRenderer playerCharacterSprite;
-    public Sprite[] newCharacter;
+    [SerializeField] private SpriteRenderer _playerCharacterSprite;
+    [SerializeField] private Sprite[] _newCharacter;
 
-
-
+    private int _score = 0;
 
     private void Awake()
     {
@@ -27,12 +26,12 @@ public class GameplayManager : MonoBehaviour
         //playerCharacterSprite = GetComponent<SpriteRenderer>();
         Application.targetFrameRate = 60;
         Time.timeScale = 1f;
-        playButton.SetActive(false);
-        backToMenuBtn.SetActive(false);
-        gameOver.SetActive(false);
+        _playButton.SetActive(false);
+        _backToMenuBtn.SetActive(false);
+        _gameOver.SetActive(false);
 
         int character = PlayerPrefs.GetInt("spriteVersion");
-        playerCharacterSprite.sprite = newCharacter[character];
+        _playerCharacterSprite.sprite = _newCharacter[character];
          
     }
 
@@ -40,12 +39,12 @@ public class GameplayManager : MonoBehaviour
     {
 
         _score = 0;
-        scoreText.text = _score.ToString();
-        gameOver.SetActive(false);
-        playButton.SetActive(false);
-        backToMenuBtn.SetActive(false);
+        _scoreText.text = _score.ToString();
+        _gameOver.SetActive(false);
+        _playButton.SetActive(false);
+        _backToMenuBtn.SetActive(false);
         Time.timeScale = 1f;
-        player.enabled = true;
+        _player.enabled = true;
 
         Pipes[] pipes = FindObjectsOfType<Pipes>();
 
@@ -58,29 +57,29 @@ public class GameplayManager : MonoBehaviour
     private void Pause()
     {
         Time.timeScale = 0f;
-        player.enabled = false;
+        _player.enabled = false;
     }
 
     public void IncreaseScore()
     {
         _score++;
-        scoreText.text = _score.ToString();
+        _scoreText.text = _score.ToString();
         PlayerPrefs.SetInt("score", _score);
     }
 
     public void GameOver()
     {
         Debug.Log("Game Over");
-        gameOver.SetActive(true);
-        playButton.SetActive(true); 
-        backToMenuBtn.SetActive(true);
+        _gameOver.SetActive(true);
+        _playButton.SetActive(true); 
+        _backToMenuBtn.SetActive(true);
         Pause();
     }
 
     public void BackToMenu()
     {
         SceneManager.LoadScene("MenuScene");
-        playerCharacterSprite.sprite = newCharacter[0];
+        _playerCharacterSprite.sprite = _newCharacter[0];
     }
 
 

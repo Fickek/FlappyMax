@@ -7,33 +7,26 @@ using System;
 
 public class MenuManager : MonoBehaviour
 {
-    public SpriteRenderer spriteRenderer;
-    public GameObject textLogo;
-    public GameObject playButton;
-    public GameObject player;
-    public Text highScoreText;
-    private int _highScoreNum = 0;
-    public Sprite[] newCharacter;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private GameObject _textLogo;
+    [SerializeField] private GameObject _playButton;
+    [SerializeField] private GameObject _player;
+    [SerializeField] private Text _highScoreText;
+    [SerializeField] private Sprite[] _newCharacter;
     private int _spriteVersion;
-   
-
-    //public GameObject newPlayer;
-    //public GameObject[] prefabs;
-    //private int newPrefab;
-
-
+    private int _highScoreNum = 0;
 
     void Awake()
     {
-        player.transform.position = new Vector2(0, 0);
+        _player.transform.position = new Vector2(0, 0);
         Application.targetFrameRate = 60;
         Time.timeScale = 1f;
-        spriteRenderer.sprite = newCharacter[0];
+        _spriteRenderer.sprite = _newCharacter[0];
         PlayerPrefs.SetInt("spriteVersion", _spriteVersion);
 
 
         _highScoreNum = PlayerPrefs.GetInt("highscore");
-        highScoreText.text += _highScoreNum.ToString();
+        _highScoreText.text += _highScoreNum.ToString();
 
         Debug.Log("High Score: " + _highScoreNum);
 
@@ -50,14 +43,14 @@ public class MenuManager : MonoBehaviour
     {
         if (_spriteVersion == 0)
         {
-            _spriteVersion = newCharacter.Length - 1;
+            _spriteVersion = _newCharacter.Length - 1;
         }
         else
         {
             _spriteVersion--;
         }
 
-        spriteRenderer.sprite = newCharacter[_spriteVersion];
+        _spriteRenderer.sprite = _newCharacter[_spriteVersion];
         // Передаёт интовое число для переключения скина на другой сцене
         PlayerPrefs.SetInt("spriteVersion", _spriteVersion);
 
@@ -66,7 +59,7 @@ public class MenuManager : MonoBehaviour
 
     public void rightChange()
     {
-        if (_spriteVersion == newCharacter.Length - 1)
+        if (_spriteVersion == _newCharacter.Length - 1)
         {
             _spriteVersion = 0;
         }
@@ -75,7 +68,7 @@ public class MenuManager : MonoBehaviour
             _spriteVersion++;
         }
 
-        spriteRenderer.sprite = newCharacter[_spriteVersion];
+        _spriteRenderer.sprite = _newCharacter[_spriteVersion];
 
         PlayerPrefs.SetInt("spriteVersion", _spriteVersion);
 

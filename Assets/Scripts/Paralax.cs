@@ -5,8 +5,8 @@ using UnityEngine;
 public class Paralax : MonoBehaviour
 {
 
+    [SerializeField] private float _animationSpeed = 1.0f;
     private MeshRenderer _meshRenderer;
-    public float animationSpeed = 1.0f; 
 
     // Start is called before the first frame update
     void Awake()
@@ -17,6 +17,6 @@ public class Paralax : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _meshRenderer.material.mainTextureOffset += new Vector2(animationSpeed * Time.deltaTime, 0);
+        _meshRenderer.material.mainTextureOffset += new Vector2(_animationSpeed * Time.deltaTime, 0);
     }
 }

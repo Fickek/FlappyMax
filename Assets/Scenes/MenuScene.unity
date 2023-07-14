@@ -413,19 +413,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fe2a7e2007df14419d72df879abb864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 799574148}
-  textLogo: {fileID: 715506621}
-  playButton: {fileID: 1260113563}
-  player: {fileID: 799574147}
-  highScoreText: {fileID: 973808686}
-  newCharacter:
-  - {fileID: 21300000, guid: ea8684997787194488f7a10a901e2020, type: 3}
-  - {fileID: 21300000, guid: fcd1512308e577f4ca3cf6361f85a315, type: 3}
-  - {fileID: 21300000, guid: a575f1e6c75e341408788d56dee82805, type: 3}
-  - {fileID: 21300000, guid: f02d010b3dc64cf48b36eda4955fcf93, type: 3}
-  - {fileID: 21300000, guid: a6d5b5a5464a7374493a791e169da1fb, type: 3}
-  - {fileID: 21300000, guid: fd660ea34bea67846b7a5d9465cf4604, type: 3}
-  - {fileID: 21300000, guid: 76f2fd5ec1a99d948858eddab1b31bdd, type: 3}
+  _spriteRenderer: {fileID: 799574148}
+  _textLogo: {fileID: 715506621}
+  _playButton: {fileID: 1260113563}
+  _player: {fileID: 799574147}
+  _highScoreText: {fileID: 973808686}
+  _newCharacter:
+  - {fileID: 21300000, guid: 0d75913266a05494eaa7f4d0a68eef39, type: 3}
+  - {fileID: 21300000, guid: e3159a8d15aa25542a7aeb67bcd0a616, type: 3}
+  - {fileID: 21300000, guid: ce3e70b8ccc89ae49a6ad1b0b044022d, type: 3}
+  - {fileID: 21300000, guid: 1c963a61f217c7045be07e212cdce889, type: 3}
+  - {fileID: 21300000, guid: 04b153128bba6e146967bf64bc14dd03, type: 3}
+  - {fileID: 21300000, guid: 85ab67f337ac0254ea9ec2ebbbe6547c, type: 3}
+  - {fileID: 21300000, guid: 5545dd2ec4d723f49af4f6c39d351eba, type: 3}
 --- !u!4 &556426468
 Transform:
   m_ObjectHideFlags: 0
@@ -658,16 +658,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff239a7b22f596f47b26621b1d3ec761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 21300000, guid: ea8684997787194488f7a10a901e2020, type: 3}
-  - {fileID: 21300000, guid: fcd1512308e577f4ca3cf6361f85a315, type: 3}
-  - {fileID: 21300000, guid: a575f1e6c75e341408788d56dee82805, type: 3}
-  - {fileID: 21300000, guid: f02d010b3dc64cf48b36eda4955fcf93, type: 3}
-  - {fileID: 21300000, guid: a6d5b5a5464a7374493a791e169da1fb, type: 3}
-  - {fileID: 21300000, guid: fd660ea34bea67846b7a5d9465cf4604, type: 3}
-  - {fileID: 21300000, guid: 76f2fd5ec1a99d948858eddab1b31bdd, type: 3}
-  gravity: 0
-  strength: 0
+  _sprites:
+  - {fileID: 21300000, guid: 0d75913266a05494eaa7f4d0a68eef39, type: 3}
+  - {fileID: 21300000, guid: e3159a8d15aa25542a7aeb67bcd0a616, type: 3}
+  - {fileID: 21300000, guid: ce3e70b8ccc89ae49a6ad1b0b044022d, type: 3}
+  - {fileID: 21300000, guid: 1c963a61f217c7045be07e212cdce889, type: 3}
+  - {fileID: 21300000, guid: 04b153128bba6e146967bf64bc14dd03, type: 3}
+  - {fileID: 21300000, guid: 85ab67f337ac0254ea9ec2ebbbe6547c, type: 3}
+  - {fileID: 21300000, guid: 5545dd2ec4d723f49af4f6c39d351eba, type: 3}
+  _spriteIndex: 0
+  _direction: {x: 0, y: 0, z: 0}
+  _gravity: 0
+  _strength: 0
 --- !u!61 &799574154
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -790,7 +792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b5442d5cd2709b419807c2abf538481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationSpeed: 0.05
+  _animationSpeed: 0.05
 --- !u!1 &973808683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,7 +1378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b5442d5cd2709b419807c2abf538481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationSpeed: 1
+  _animationSpeed: 1
 --- !u!61 &1788165361
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -5,32 +5,26 @@ using UnityEngine.Rendering;
 
 public class Player : MonoBehaviour
 {
-    //private SpriteRenderer spriteRenderer;
-    public Sprite[] sprites;
-    private int spriteIndex;
-    private Vector3 _direction;
-    public float gravity = -9.8f;
-    public float strength = 5f;
+    [SerializeField] private Sprite[] _sprites;
+    [SerializeField] private int _spriteIndex;
+    [SerializeField] private Vector3 _direction;
+    [SerializeField] private float _gravity = -9.8f;
+    [SerializeField] private float _strength = 5f;
+
+
+    //private GameplayManager gameplayManger;
 
 
     private void Awake()
     {
-        //spriteRenderer = GetComponent<SpriteRenderer>();
+        //gameplayManger = GetComponent<GameplayManager>();
     }
-
-    private void Start()
-    {
-        //InvokeRepeating(nameof(AnimateSprite), 0.15f, 0.15f);
-
-    }
-
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonUp(0))
         {
-            //Debug.Log("Pressed");
-            _direction = Vector3.up * strength;
+            _direction = Vector3.up * _strength;
         }
         if(Input.touchCount > 0)
         {
@@ -38,39 +32,26 @@ public class Player : MonoBehaviour
 
             if(touch.phase == TouchPhase.Began)
             {
-                _direction = Vector3.up * strength;
+                _direction = Vector3.up * _strength;
             }
         }
 
-        _direction.y += gravity * Time.deltaTime;
+        _direction.y += _gravity * Time.deltaTime;
         transform.position += _direction * Time.deltaTime;
         
     }
-
-    /*private void AnimateSprite()
-    {
-        spriteIndex++;
-        if(spriteIndex >= sprites.Length)
-        {
-            spriteIndex = 0;
-        }
-        spriteRenderer.sprite = sprites[spriteIndex];
-    }*/
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Obstacles"))
         {
-            //GameManagergameManager.GameOver();
             FindObjectOfType<GameplayManager>().GameOver();
         } 
         else if(other.CompareTag("Score"))
         {
-            //GameManagergameManager.IncreaseScore();
             FindObjectOfType<GameplayManager>().IncreaseScore();
         }
     }
-
 
     private void OnEnable()
     {
@@ -79,7 +60,5 @@ public class Player : MonoBehaviour
         transform.position = position;
         _direction = Vector3.zero;
     }
-
-
 
 }

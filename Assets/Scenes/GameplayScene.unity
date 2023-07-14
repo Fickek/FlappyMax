@@ -556,16 +556,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff239a7b22f596f47b26621b1d3ec761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 21300000, guid: ea8684997787194488f7a10a901e2020, type: 3}
-  - {fileID: 21300000, guid: fcd1512308e577f4ca3cf6361f85a315, type: 3}
-  - {fileID: 21300000, guid: a575f1e6c75e341408788d56dee82805, type: 3}
-  - {fileID: 21300000, guid: f02d010b3dc64cf48b36eda4955fcf93, type: 3}
-  - {fileID: 21300000, guid: a6d5b5a5464a7374493a791e169da1fb, type: 3}
-  - {fileID: 21300000, guid: fd660ea34bea67846b7a5d9465cf4604, type: 3}
-  - {fileID: 21300000, guid: 76f2fd5ec1a99d948858eddab1b31bdd, type: 3}
-  gravity: -20
-  strength: 4.8
+  _sprites:
+  - {fileID: 21300000, guid: 0d75913266a05494eaa7f4d0a68eef39, type: 3}
+  - {fileID: 21300000, guid: e3159a8d15aa25542a7aeb67bcd0a616, type: 3}
+  - {fileID: 21300000, guid: ce3e70b8ccc89ae49a6ad1b0b044022d, type: 3}
+  - {fileID: 21300000, guid: 1c963a61f217c7045be07e212cdce889, type: 3}
+  - {fileID: 21300000, guid: 04b153128bba6e146967bf64bc14dd03, type: 3}
+  - {fileID: 21300000, guid: 85ab67f337ac0254ea9ec2ebbbe6547c, type: 3}
+  - {fileID: 21300000, guid: 5545dd2ec4d723f49af4f6c39d351eba, type: 3}
+  _spriteIndex: 0
+  _direction: {x: 0, y: 0, z: 0}
+  _gravity: -20
+  _strength: 4.8
 --- !u!61 &799574154
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -688,7 +690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b5442d5cd2709b419807c2abf538481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationSpeed: 0.05
+  _animationSpeed: 0.05
 --- !u!1 &1000128558
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,20 +1018,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0943401782d3448bc793526dd4ec94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 799574153}
-  scoreText: {fileID: 528713682}
-  playButton: {fileID: 1260113563}
-  backToMenuBtn: {fileID: 557055774}
-  gameOver: {fileID: 1238491324}
-  playerCharacterSprite: {fileID: 799574148}
-  newCharacter:
-  - {fileID: 21300000, guid: ea8684997787194488f7a10a901e2020, type: 3}
-  - {fileID: 21300000, guid: fcd1512308e577f4ca3cf6361f85a315, type: 3}
-  - {fileID: 21300000, guid: a575f1e6c75e341408788d56dee82805, type: 3}
-  - {fileID: 21300000, guid: f02d010b3dc64cf48b36eda4955fcf93, type: 3}
-  - {fileID: 21300000, guid: a6d5b5a5464a7374493a791e169da1fb, type: 3}
-  - {fileID: 21300000, guid: fd660ea34bea67846b7a5d9465cf4604, type: 3}
-  - {fileID: 21300000, guid: 76f2fd5ec1a99d948858eddab1b31bdd, type: 3}
+  _player: {fileID: 799574153}
+  _scoreText: {fileID: 528713682}
+  _playButton: {fileID: 1260113563}
+  _backToMenuBtn: {fileID: 557055774}
+  _gameOver: {fileID: 1238491324}
+  _playerCharacterSprite: {fileID: 799574148}
+  _newCharacter:
+  - {fileID: 21300000, guid: 0d75913266a05494eaa7f4d0a68eef39, type: 3}
+  - {fileID: 21300000, guid: e3159a8d15aa25542a7aeb67bcd0a616, type: 3}
+  - {fileID: 21300000, guid: ce3e70b8ccc89ae49a6ad1b0b044022d, type: 3}
+  - {fileID: 21300000, guid: 1c963a61f217c7045be07e212cdce889, type: 3}
+  - {fileID: 21300000, guid: 04b153128bba6e146967bf64bc14dd03, type: 3}
+  - {fileID: 21300000, guid: 85ab67f337ac0254ea9ec2ebbbe6547c, type: 3}
+  - {fileID: 21300000, guid: 5545dd2ec4d723f49af4f6c39d351eba, type: 3}
 --- !u!4 &1606894325
 Transform:
   m_ObjectHideFlags: 0
@@ -1178,10 +1180,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b907534d7248e594bb58f46efa817106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 5878532078622294854, guid: 750e592f0475e82429767ce10de493e7, type: 3}
-  spawnRate: 1
-  minHeight: -2
-  maxHeight: 2
+  _prefab: {fileID: 5878532078622294854, guid: 750e592f0475e82429767ce10de493e7, type: 3}
+  _spawnRate: 1
+  _minHeight: -2
+  _maxHeight: 2
 --- !u!4 &1637615639
 Transform:
   m_ObjectHideFlags: 0
@@ -1294,7 +1296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b5442d5cd2709b419807c2abf538481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationSpeed: 1
+  _animationSpeed: 1
 --- !u!61 &1788165361
 BoxCollider2D:
   m_ObjectHideFlags: 0
